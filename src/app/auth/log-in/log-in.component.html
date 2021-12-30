@@ -1,0 +1,83 @@
+
+<!-- <div class="container"> -->
+  <h1 id="header">Welcome to our Heroes company</h1>
+  <!-- <div class="contain"> -->
+   <!-- <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label text-center">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+      <div *ngIf="userForm.controls['email']?.errors?.email && userForm.controls['password'].touched"  class="error">Invalid email!</div>
+      <div *ngIf="userForm.controls['email']?.errors?.required && userForm.controls['password'].touched"  class="error">Required</div>
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+      <div *ngIf="userForm.controls['password']?.errors?.required && userForm.controls['password'].touched" class="error">Required</div>
+      <div *ngIf="userForm.controls['password']?.errors?.pattern && userForm.controls['password'].touched" class="error">Enter a 8 digit password</div>
+
+    </div>
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary justify-content-center">Submit</button>
+  </div>
+  </form> -->
+
+
+
+
+  <div class="login-form">
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()" action="/examples/actions/confirmation.php" method="post">
+        <h2 class="text-center">Log in</h2>       
+        <div class="form-group">
+          <label for="exampleInputEmail1" class="form-label"><span class="asterix-required">*&nbsp;</span>Email address</label>
+
+            <input formControlName="email" type="text" class="form-control" placeholder="Email" required="required" [ngClass]="{'class': true}">
+            <div *ngIf="userForm.controls['email']?.errors?.email && userForm.controls['email'].touched"  class="error">Invalid email!</div>
+            <div *ngIf="userForm.controls['email']?.errors?.required && userForm.controls['email'].touched"  class="error">Required</div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="form-label"><span class="asterix-required">*&nbsp;</span>Password</label>
+
+            <input formControlName="password" type="password" class="form-control" placeholder="Password" required="required">
+            <div *ngIf="userForm.controls['password']?.errors?.required && userForm.controls['password'].touched" class="error">Required</div>
+            <div *ngIf="userForm.controls['password']?.errors?.pattern && userForm.controls['password'].touched" class="error">Enter a 8 digit, One capital letter,
+              One 
+               alphanumeric</div>
+      
+        </div>
+        <div class="form-group">
+            <button  type="submit" class="form-control btn btn-primary btn-block" [ngClass]="{'disabled': !userForm.valid}">Log in</button>
+        </div>    
+    </form>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+
+<div *ngIf="loginFailed">
+
+  fvfffd
+</div>
+<div *ngIf="loginFailed">
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

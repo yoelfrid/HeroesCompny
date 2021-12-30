@@ -3,16 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LogInComponent } from './auth/log-in/log-in.component';
+import { HeroComponent } from './heroes/hero/hero.component';
+import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AuthGuard } from './auth-guard.guard';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogInComponent,
+    HeroComponent,
+    HeroesListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

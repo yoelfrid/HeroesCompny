@@ -1,0 +1,224 @@
+
+[
+    {
+     "name": "James",
+     "img":"assets/img/hero2.jpg",
+     "ability": "attacker",
+     "trainer_id": 1,
+     "date_started": 1640509678,
+     "suit_colors": [],
+     "starting_power": 0,
+     "current_power": 5,
+     "id": "1"
+    },
+    {
+        "name": "Robert",
+        "img":"assets/img/hero3.png",
+        "ability": "defender",
+        "trainer_id": 1,
+        "date_started": 1640509618,
+        "suit_colors": [],
+        "starting_power": 10,
+        "current_power": 61,
+        "id": "2"
+       },
+       {
+        "name": "John",
+        "img":"assets/img/hero4.png",
+        "ability": "attacker",
+        "trainer_id": 1,
+        "date_started": 1640509558,
+        "suit_colors": [],
+        "starting_power": 3,
+        "current_power": 15,
+        "id": "3"
+       },
+       {
+        "name": "Michael",
+        "img":"assets/img/hero5.jpg",
+        "ability": "defender",
+        "trainer_id": 2,
+        "date_started": 1640509498,
+        "suit_colors": [],
+        "starting_power": 9,
+        "current_power": 17,
+        "id": "4"
+       },
+       {
+        "name": "William",
+        "img":"assets/img/hero6.png",
+        "ability": "attacker",
+        "trainer_id": 2,
+        "date_started": 1640509438,
+        "suit_colors": [],
+        "starting_power": 2,
+        "current_power": 45,
+        "id": "5"
+       },
+       {
+        "name": "Avi",
+        "img":"assets/img/hero7.jpg",
+        "ability": "defender",
+        "trainer_id": 2,
+        "date_started": 1640509378,
+        "suit_colors": [],
+        "starting_power": 3,
+        "current_power": 32,
+        "id": "6"
+       },
+       {
+        "name": "David",
+        "img":"assets/img/hero8.png",
+        "ability": "attacker",
+        "trainer_id": 3,
+        "date_started": 1640509318,
+        "suit_colors": [],
+        "starting_power": 6,
+        "current_power": 55,
+        "id": "7"
+       },
+       {
+        "name": "Richard",
+        "img":"assets/img/hero2.jpg",
+        "ability": "defender",
+        "trainer_id": 3,
+        "date_started": 1640509258,
+        "suit_colors": [],
+        "starting_power": 2,
+        "current_power": 54,
+        "id": "8"
+       },
+       {
+        "name": "Joseph",
+        "img":"assets/img/hero3.png",
+        "ability": "attacker",
+        "trainer_id": 3,
+        "date_started": 1640509198,
+        "suit_colors": [],
+        "starting_power": 25,
+        "current_power": 38,
+        "id": "9"
+       },
+       {
+        "name": "Charles",
+        "img":"assets/img/hero4.png",
+        "ability": "defender",
+        "trainer_id": 4,
+        "date_started": 1640509138,
+        "suit_colors": [],
+        "starting_power": 7,
+        "current_power": 16,
+        "id": "10"
+       },
+       {
+        "name": "Thomas",
+        "img":"assets/img/hero5.jpg",
+        "ability": "attacker",
+        "trainer_id": 4,
+        "date_started": 1640509078,
+        "suit_colors": [],
+        "starting_power": 4,
+        "current_power": 54,
+        "id": "11"
+       },
+       {
+        "name": "Christopher",
+        "img":"assets/img/hero6.png",
+        "ability": "defender",
+        "trainer_id": 4,
+        "date_started": 1640509018,
+        "suit_colors": [],
+        "starting_power": 8,
+        "current_power": 30,
+        "id": "12"
+       },
+       {
+        "name": "Daniel",
+        "img":"assets/img/hero7.jpg",
+        "ability": "attacker",
+        "trainer_id": 5,
+        "date_started": 1640508958,
+        "suit_colors": [],
+        "starting_power": 22,
+        "current_power": 42,
+        "id": "13"
+       },
+       {
+        "name": "Matthew",
+        "img":"assets/img/hero8.png",
+        "ability": "defender",
+        "trainer_id":5,
+        "date_started": 1640508898,
+        "suit_colors": [],
+        "starting_power": 24,
+        "current_power": 36,
+        "id": "14"
+       },
+       {
+        "name": "Anthony",
+        "img":"assets/img/hero2.jpg",
+        "ability": "attacker",
+        "trainer_id": 5,
+        "date_started": 1640508838,
+        "suit_colors": [],
+        "starting_power": 19,
+        "current_power": 42,
+        "id": "15"
+       },
+       {
+        "name": "Mark",
+        "img":"assets/img/hero3.png",
+        "ability": "defender",
+        "trainer_id": 6,
+        "date_started": 1640508778,
+        "suit_colors": [],
+        "starting_power": 13,
+        "current_power": 24,
+        "id": "16"
+       },
+       {
+        "name": "Donald",
+        "img":"assets/img/hero4.png",
+        "ability": "attacker",
+        "trainer_id": 6,
+        "date_started": 1640508718,
+        "suit_colors": [],
+        "starting_power": 12,
+        "current_power": 13,
+        "id": "17"
+       },
+       {
+        "name": "Steven",
+        "img":"assets/img/hero5.jpg",
+        "ability": "defender",
+        "trainer_id": 6,
+        "date_started": 1640508658,
+        "suit_colors": [],
+        "starting_power": 8,
+        "current_power": 23,
+        "id": "18"
+       },
+       {
+        "name": "Paul",
+        "img":"assets/img/hero5.jpg",
+        "ability": "attacker",
+        "trainer_id": 7,
+        "date_started": 1640508598,
+        "suit_colors": [],
+        "starting_power": 8,
+        "current_power": 11,
+        "id": "19"
+       },
+       {
+        "name": "Andrew",
+        "img":"assets/img/hero6.png",
+        "ability": "defender",
+        "trainer_id": 7,
+        "date_started": 1640508538,
+        "suit_colors": [],
+        "starting_power": 41,
+        "current_power": 43,
+        "id": "20"
+       }
+    
+]
