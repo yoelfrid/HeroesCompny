@@ -13,11 +13,12 @@ export class HeroesListComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
-  sortArray(array: Hero[]) {
-    return array.sort((a: Hero, b: Hero) => a.current_power - b.current_power).reverse();
-  }
   ngOnInit(): void {
     this.heroes = this.sortArray(this.heroService.getHeroes());
+  }
+  
+  sortArray(array: Hero[]) {
+    return array.sort((a: Hero, b: Hero) => a.current_power - b.current_power).reverse();
   }
 
 }

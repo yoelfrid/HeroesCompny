@@ -18,6 +18,7 @@ export class HeroService {
 
   getHeroes(): Hero[] {
     this.user = this.authService.user;
+    
     return this.heroesMock
   }
 
@@ -26,9 +27,10 @@ export class HeroService {
         alert("The hero is ready for any task")
         return
       }
-      let random = Math.random() * (this.max - current_power) + current_power / current_power;
+      let random = Math.random() * (this.max - current_power);
+      
       this.logger.info("Trainer of hero! ")
-      hero.current_power = Number( (hero.current_power +=random).toFixed(2));
+      hero.current_power = Number((hero.current_power += random).toFixed(2));
       if (hero.current_power >= this.max) {
         hero.current_power = this.max;
       }

@@ -6,19 +6,15 @@ import { Trainer } from 'src/app/models/trainer.interface';
   providedIn: 'root'
 })
 export class AuthService {
-  onePassword: string
   public user: Trainer | undefined;
 
-  // mock server data
-  private _trainersMock: Trainer[] = Trainers;
+  private trainersMock: Trainer[] = Trainers;
 
   login(email: string ,password:string): Trainer | boolean {
-    let user = this._trainersMock.find(user => user.email === email);
-
+    let user = this.trainersMock.find(user => user.email === email);
     
     if(user?.password === btoa(password)){
-      this.user = user;
-      return {...user, password: '*****'};
+      return this.user = {...user, password: '*****'};
     }    
     return false;
   }

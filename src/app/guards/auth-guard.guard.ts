@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService,  private router: Router, private logger:LoggerGuard) {}
 
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    // check if user logged in
+
     let loggedIn = this.authService.user;
     if(loggedIn) {
       return true;

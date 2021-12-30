@@ -10,24 +10,23 @@
         <input formControlName="email" type="text" class="form-control" placeholder="Email" required="required"
           [ngClass]="{'class': true}">
         <div *ngIf="userForm.controls['email']?.errors?.email && userForm.controls['email'].touched" class="error">
-          Invalid email!</div>
+          Invalid email</div>
         <div *ngIf="userForm.controls['email']?.errors?.required && userForm.controls['email'].touched" class="error">
-          Required</div>
+          Email is required</div>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1" class="form-label"><span
             class="asterix-required">*&nbsp;</span>Password</label>
-
         <input formControlName="password" type="password" class="form-control" placeholder="Password"
           required="required">
         <div *ngIf="userForm.controls['password']?.errors?.required && userForm.controls['password'].touched"
-          class="error">Required</div>
+          class="error">Password is required</div>
         <div *ngIf="userForm.controls['password']?.errors?.pattern && userForm.controls['password'].touched"
           class="error">Enter a 8 digit, One capital letter, One alphanumeric</div>
 
       </div>
       <div class="form-group">
-        <div *ngIf="loginFailed" class="alert alert-danger" role="alert">Incorrect email or password</div>
+        <div *ngIf="loginFailed" class="alert alert-danger" role="alert">Email or password is incorrect</div>
         <button type="submit" class="form-control btn btn-primary btn-block"
           [ngClass]="{'disabled': !userForm.valid}">Log in</button>
       </div>

@@ -34,7 +34,8 @@ export class LogInComponent implements OnInit {
       if (this.authService.login(formValue.email, formValue.password)) {
         this.logger.info("heroes load")
         this.router.navigate(['heroes'])
-      } else {
+      }
+       else {
         this.logger.info("Login is not good")
         this.loginFailed = true
         setTimeout(() => {

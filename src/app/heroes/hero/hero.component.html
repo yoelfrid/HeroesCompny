@@ -14,8 +14,8 @@
     </ul>
 
     <div class="card-body d-flex justify-content-center">
-      <button class="btn btn-primary"
-        [ngClass]="{'disabled': hero.current_power >= 100, 'btn-secondary disabled': !isTrain }"
+      <button class="btn"
+        [ngClass]="{'btn-primary': isTrain, 'btn-secondary disabled': !isTrain }"
         (click)="isTrainer(hero, hero.current_power)">Start Training</button>
     </div>
   </div>
