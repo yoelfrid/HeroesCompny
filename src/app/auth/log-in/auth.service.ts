@@ -12,16 +12,14 @@ export class AuthService {
   // mock server data
   private _trainersMock: Trainer[] = Trainers;
 
-a:string |undefined
   login(email: string ,password:string): Trainer | boolean {
-    const user = this._trainersMock.find(user => user.email === email);
+    let user = this._trainersMock.find(user => user.email === email);
 
     
     if(user?.password === btoa(password)){
       this.user = user;
       return {...user, password: '*****'};
-    }
-
+    }    
     return false;
   }
 

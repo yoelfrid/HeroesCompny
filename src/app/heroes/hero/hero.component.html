@@ -1,19 +1,21 @@
-<div style="width: 300px; margin: 30px ;" [ngClass]="{'wrapper': !isTrain}">
-    <div class="card">
-        <img width="250px;" height="250px;" src="{{hero.img}}" class="card-img-top" alt="image of Hero">
-        <div class="card-body">
-          <h5 class="card-title text-center">{{hero.name}}</h5>
-        </div>
-        <ul class="list-group list-group-flush">
+<div class="heder-card" [ngClass]="{'wrapper': !isTrain}">
+  <div class="card">
+    <img width="250px;" height="250px;" src="{{hero.img}}" class="card-img-top" alt="image of Hero">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{hero.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
 
-          <li class="list-group-item">Ability: {{hero.ability}}</li>
-          <li class="list-group-item">Date started: {{hero.date_started | date}}</li>
-          <li class="list-group-item">Starting power: {{hero.starting_power}}</li>
-          <li class="list-group-item">Current power: {{hero.current_power}}</li>
-          <li class="list-group-item">Trainer id: {{hero.trainer_id}}</li>
+      <li class="list-group-item">Ability: {{hero.ability}}</li>
+      <li class="list-group-item">Date started: {{hero.date_started | date}}</li>
+      <li class="list-group-item">Starting power: {{hero.starting_power}}</li>
+      <li class="list-group-item">Current power: {{hero.current_power}}</li>
+      <li class="list-group-item">Trainer id: {{hero.trainer_id}}</li>
+    </ul>
 
-        </ul>
-        <div class="card-body d-flex justify-content-center">
-          <button class="btn btn-primary" [ngClass]="{'disabled': hero.current_power >= 100, 'btn-secondary disabled': !isTrain }" (click)="isTrainer(hero, hero.trainer_id, hero.id, hero.current_power)">Start Training</button>
-        </div>
-</div>
+    <div class="card-body d-flex justify-content-center">
+      <button class="btn btn-primary"
+        [ngClass]="{'disabled': hero.current_power >= 100, 'btn-secondary disabled': !isTrain }"
+        (click)="isTrainer(hero, hero.current_power)">Start Training</button>
+    </div>
+  </div>

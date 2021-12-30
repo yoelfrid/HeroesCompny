@@ -7,7 +7,9 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { HeroComponent } from './heroes/hero/hero.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AuthGuard } from './auth-guard.guard';
+import { AuthGuard } from './guards/auth-guard.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { AuthGuard } from './auth-guard.guard';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    
+    BrowserAnimationsModule,
+    ModalModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -219,6 +219,17 @@
         "starting_power": 41,
         "current_power": 43,
         "id": "20"
+       },
+       {
+        "name": "Andrew",
+        "img":"assets/img/hero2.jpg",
+        "ability": "defender",
+        "trainer_id": 5,
+        "date_started": 1640508538,
+        "suit_colors": [],
+        "starting_power": 41,
+        "current_power": 47,
+        "id": "21"
        }
     
 ]

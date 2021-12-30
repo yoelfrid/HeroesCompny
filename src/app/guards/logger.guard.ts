@@ -5,17 +5,15 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LogerGuard implements CanActivate {
+export class LoggerGuard implements CanActivate {
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log("Login Succeeded ");
-      
+    route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    console.log("Succeeded ");
     return true;
   }
-  
-  info(msg:string){
+
+  info(msg: string) {
     console.log(msg);
-    
+
   }
 }

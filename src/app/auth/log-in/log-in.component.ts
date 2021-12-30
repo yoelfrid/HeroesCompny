@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from './auth.service';
 // import { Trainer } from 'src/app/models/Trainer.interface';
 import { Router } from '@angular/router';
-import { LogerGuard } from 'src/app/loger.guard';
+import { LoggerGuard } from 'src/app/guards/logger.guard';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { LogerGuard } from 'src/app/loger.guard';
 })
 export class LogInComponent implements OnInit {
   userForm: FormGroup;
-  loginFailed:boolean = false;
-  constructor(private authService: AuthService, private router: Router,private logger:LogerGuard) { }
-  submitted = false;
+  loginFailed: boolean = false;
+
+  constructor(private authService: AuthService,
+    private router: Router,
+    private logger: LoggerGuard) { }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -25,31 +28,23 @@ export class LogInComponent implements OnInit {
   }
 
   onFormSubmit(): void {
-    // console.log('password:', this.userForm.controls['password'].errors);
-    // console.log('email:',this.userForm.get('email')?.errors);
-    const formValue = this.userForm.value;
-    // console.log("formValue ",formValue.email);
-    // if(this.userForm.invalid){
-    //   console.log("aaaaaa");
-      
-    // }
-    if(this.userForm.valid){
-      if(this.authService.login(formValue.email, formValue.password)){
+    let formValue = this.userForm.value;
+
+    if (this.userForm.valid) {
+      if (this.authService.login(formValue.email, formValue.password)) {
         this.logger.info("heroes load")
         this.router.navigate(['heroes'])
       } else {
-        console.log(this.loginFailed);
-        
+        this.logger.info("Login is not good")
         this.loginFailed = true
-        // console.log(this.loginFailed);
-
-        // alert("login failed");
+        setTimeout(() => {
+          this.loginFailed = false
+        }, 2000);
       }
-    } 
+    }
     else {
-      // alert("something wrong! ");
-      console.log(this.userForm);
-      
+      alert("something wrong!");
+
     }
   }
 

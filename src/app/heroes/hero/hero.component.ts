@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroService } from '../hero.service';
+import { LoggerGuard } from 'src/app/guards/logger.guard';
 
 @Component({
   selector: 'app-hero',
@@ -14,12 +15,13 @@ export class HeroComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.isTrain =this.heroService.user?.id == this.hero.trainer_id ? true : false     
+
+    this.isTrain = this.heroService.user?.id == this.hero.trainer_id ? true : false     
   }
 
-  isTrainer(hero: Hero, trainer_id: number, id: string, current_power: number) {
+  isTrainer(hero: Hero, current_power: number) {
 
-    this.heroService.isTrainer(trainer_id, hero, current_power)
+    this.heroService.isTrainer(hero, current_power)
 
   }
 
