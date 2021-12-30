@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LogInComponent } from './auth/log-in/log-in.component';
-import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { AuthGuard } from './guards/auth-guard.guard';
-import { LoggerGuard } from './guards/logger.guard';
 
 const routes: Routes = [
-  { path: '', component: LogInComponent  , canActivate:[LoggerGuard]},
+  {
+    path: 'login', loadChildren: () => import('./auth/auth-module').then( m => m.AuthModule)
+  },
+  {
+    path: 'heroes', loadChildren:() => import('./heroes/heroes-module').then( m => m.HeroesModule)
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 
-  { path: 'login', component: LogInComponent , canActivate:[LoggerGuard]},
-  { path: 'heroes', component: HeroesListComponent, canActivate:[AuthGuard, LoggerGuard] },
-  { path: 'hero', component: HeroComponent, canActivate:[AuthGuard, LoggerGuard] }
-  
+
 ];
 
 @NgModule({
