@@ -15,7 +15,7 @@ import {AuthGuard} from "../guards/auth-guard.guard";
     FormsModule,
   ],
   declarations: [LogInComponent],
-  providers: [AuthGuard],
+  providers: [],
 
 })
 export class AuthModule {

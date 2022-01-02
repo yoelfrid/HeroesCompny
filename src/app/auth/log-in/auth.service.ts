@@ -12,7 +12,7 @@ export class AuthService {
 
   login(email: string ,password:string): Trainer | boolean {
     let user = this.trainersMock.find(user => user.email === email);
-    
+  
     if(user?.password === btoa(password)){
       return this.user = {...user, password: '*****'};
     }    
