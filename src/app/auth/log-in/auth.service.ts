@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import  Trainers  from '../../../assets/json/Trainers.json'
+import Trainers from '../../../assets/json/Trainers.json'
 import { Trainer } from 'src/app/models/trainer.interface';
 
 @Injectable({
@@ -10,16 +10,18 @@ export class AuthService {
 
   private trainersMock: Trainer[] = Trainers;
 
-  login(email: string ,password:string): Trainer | boolean {
+  login(email: string, password: string): Trainer | boolean {
     let user = this.trainersMock.find(user => user.email === email);
-  
-    if(user?.password === btoa(password)){
-      return this.user = {...user, password: '*****'};
-    }    
+
+    if (user?.password === btoa(password)) {
+      this.user = { ...user, password: '********' };
+      localStorage.setItem('user', this.user.password)
+      return this.user
+    }
     return false;
   }
 
-  logout(){
-    this.user = undefined;
+  logout() {
+    localStorage.removeItem('user');
   }
 }

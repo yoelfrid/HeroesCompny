@@ -27,8 +27,10 @@
       </div>
       <div class="form-group">
         <div *ngIf="loginFailed" class="alert alert-danger" role="alert">Email or password is incorrect</div>
-        <button type="submit" class="form-control btn btn-primary btn-block"
-          [ngClass]="{'disabled': !userForm.valid}">Log in</button>
+        <button *ngIf="!userTrue" type="submit" class="form-control btn btn-primary btn-block"
+          [ngClass]="{'disabled': !userForm.valid}" value="Log in">Log in</button>
+          <button *ngIf="userTrue" (click)="logOut()" class="form-control btn btn-primary btn-block"
+          [ngClass]="{'disabled': !userForm.valid}">Log out</button>
       </div>
     </form>
   </div>

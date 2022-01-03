@@ -15,7 +15,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class LogInComponent implements OnInit {
   userForm: FormGroup;
   loginFailed: boolean = false;
-
+  userTrue:boolean = false;
   constructor(private authService: AuthService,
     private router: Router,
     private logger: LoggerGuard) { }
@@ -32,6 +32,10 @@ export class LogInComponent implements OnInit {
 
     if (this.userForm.valid) {
       if (this.authService.login(formValue.email, formValue.password)) {
+        this.userTrue = true
+        setTimeout(() => {
+          this.userTrue = false
+        }, 2000);
         this.logger.info("heroes load")
         this.router.navigate(['heroes'])
       }
@@ -49,4 +53,9 @@ export class LogInComponent implements OnInit {
     }
   }
 
+  logOut(){
+    this.authService.logout()
+    this.userTrue = false;
+
+  }
 }

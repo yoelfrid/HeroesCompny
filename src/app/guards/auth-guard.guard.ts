@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
-import { AuthService } from '../auth/log-in/auth.service';
+import { CanActivate, Router } from '@angular/router';
 import { LoggerGuard } from './logger.guard';
 
 @Injectable({
@@ -8,19 +7,18 @@ import { LoggerGuard } from './logger.guard';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService,  private router: Router, private logger:LoggerGuard) {}
+  constructor(private router: Router, private logger: LoggerGuard) { }
 
-  canActivate(route: ActivatedRouteSnapshot): boolean {
+  canActivate(): boolean {
 
-    let loggedIn = this.authService.user;
-    if(loggedIn) {
+    if (localStorage.getItem('user')) {
       return true;
     }
     this.logger.info("login failed")
     this.router.navigate(['login'])
 
     return false;
-    
+
   }
 
 }

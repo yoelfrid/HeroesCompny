@@ -12,7 +12,7 @@ import {HeroesListComponent} from "./heroes-list/heroes-list.component";
   ],
   declarations: [
     HeroComponent,
-    HeroesListComponent
+    HeroesListComponent,
   ]
 })
 export class HeroesModule {
