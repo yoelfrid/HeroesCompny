@@ -36,4 +36,8 @@ export class HeroService {
       }
       return this.heroesMock.sort((a: Hero,b: Hero) => a.current_power - b.current_power).reverse()
     }
+
+    logOut(){
+      this.authService.logout();
+    }
 }
