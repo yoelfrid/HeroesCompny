@@ -12,7 +12,9 @@ import { Trainer } from 'src/app/models/trainer.interface';
 export class HeroesListComponent implements OnInit {
 
   heroes: Hero[] = []
-userName:  Trainer | undefined
+  heroesYour: Hero[] = []
+  userName: Trainer | undefined
+  
   constructor(private heroService: HeroService, private router: Router
   ) { }
 
@@ -25,6 +27,16 @@ userName:  Trainer | undefined
     return array.sort((a: Hero, b: Hero) => a.current_power - b.current_power).reverse();
   }
 
+  sortArrayByAll() {
+    this.heroes = this.sortArray(this.heroService.getHeroes()).sort((a: Hero, b: Hero) => a.current_power - b.current_power).reverse();
+    return this.heroes
+  }
+
+  sortArrayByYour() {
+    this.heroesYour = this.heroes.filter(hero => hero.trainer_id == this.userName?.id)
+    this.heroes = this.heroesYour
+    console.log("this.heroesYour ", this.heroesYour);
+  }
   logOut() {
     this.heroService.logOut();
     this.router.navigate(['login'])
